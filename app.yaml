@@ -1,0 +1,24 @@
+application: ci-project #
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:  
+- url: /scripts
+  static_dir: scripts
+  expiration: "20m"
+
+- url: /styles
+  static_dir: styles
+  expiration: "20m"
+
+- url: .*
+  script: main.app
+
+libraries:
+- name: django
+  version: "1.3"
+    
+env_variables:
+  DJANGO_SETTINGS_MODULE: 'settings'

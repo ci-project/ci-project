@@ -1,0 +1,41 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+   <head>
+      <title>{% block title %}Welcome{% if title %} - {{ title }}{% endif %}{% endblock title %}</title>  
+      	<meta charset="utf-8" />
+      	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="cleartype" content="on" />
+        <meta name="author" content="Panu Salmi" />
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="viewport" content="width=device-width" />
+        {% block meta %}
+        {% endblock meta %}
+        
+		<link rel="stylesheet" type="text/css" href="/styles/base.css" />
+        <script type="text/javascript" src="/scripts/jquery-1.9.1.min.js"></script>
+        {% block scripts %}
+      	{% endblock scripts %}
+	</head>
+   <body>
+   		
+      <div id="header_wrapper">
+         <div id="notifications"></div>
+         <header>
+			{% block header %}
+			{% endblock header %}
+         </header>
+      </div>
+      <div id="content_wrapper">
+	    <div id="content" class="container">
+	    	{% block body %}
+	    	{% endblock body %}
+	    </div>
+      </div> 
+      <footer>
+      	{% block footer %}
+      	{% endblock footer %}
+      </footer>
+   </body>
+</html>

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block body %}
+<section id="tasklist" class="block" style="left: 500px; top: 0px; float:right;">
+	<div>
+		Tasks
+		{% for task in tasks %}
+		<p>{{ task.title }}</p>
+		{% endfor %}
+				
+	</div>
+</section>
+
+<section id="intro" class="block" style="left: 30px; top: 10px;">
+	<div>
+		Project page for {{ project.name }} 
+		<p><a href="/">back</a></p>
+	</div>
+</section>
+
+<section id="message" class="block" style="left: 30px; top: 70px;">
+	<div>
+		Add/edit task
+		<form action="/task" method="post">
+			<input id="parent" name="parent" type="hidden" value="{{ project.key }}"/>
+			<input id="name" name="name" type="hidden" value="{{ project.name }}"/>
+			
+			<label for="title" >Title</label>
+			<input id="title" name="title" type="text" value="" size="30" maxlength="30" />
+			
+			<label for="description" >Description</label>
+			<input id="description" name="description" type="text" value="" size="30" maxlength="30" />
+			
+			<button type="submit" >Add</button>
+		</form>
+	</div>
+</section>
+{% endblock body %}
