@@ -1,23 +1,19 @@
 import sys
 import unittest
-from tests import projectTest, taskTest
+import os
 
 def main():
-    sys.path.insert(0, 'google_appengine')
+    sys.path.append(os.path.dirname(os.getcwd()))
+    sys.path.append('google_appengine')
     import dev_appserver
     dev_appserver.fix_sys_path()
     
-    suite = unittest.TestLoader().loadTestsFromTestCase(projectTest.TestProjectFunctions)
+    suite = unittest.TestLoader().discover('.')
     result = unittest.TextTestRunner(verbosity=2).run(suite)
     if not result.wasSuccessful():
-        sys.exit(0)
-    
-    suite = unittest.TestLoader().loadTestsFromTestCase(taskTest.TestTaskFunctions)
-    result = unittest.TextTestRunner(verbosity=2).run(suite)
-    if not result.wasSuccessful():
-        sys.exit(0)
+        sys.exit(1)
 
-    sys.exit(1)
+    sys.exit(0)
 
 if __name__ == '__main__':
     main()
