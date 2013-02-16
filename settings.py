@@ -3,7 +3,7 @@ import logging
 
 DOMAIN = 'http://ci-project.appspot.com'
 
-DATABASE_ENGINE = ''
+DATABASE_ENGINE = '' 
 DATABASE_NAME = ''
 DATABASE_USER = ''
 DATABASE_PASSWORD = ''
