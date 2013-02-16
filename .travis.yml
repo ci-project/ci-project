@@ -5,5 +5,4 @@ before_script:
 - unzip -q google_appengine_1.7.4.zip
 
 script:
-- cd tests
-- python -m unittest projectTest taskTest
+- python -m runtests
