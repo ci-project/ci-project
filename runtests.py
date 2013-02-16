@@ -8,7 +8,7 @@ def main():
     import dev_appserver
     dev_appserver.fix_sys_path()
     
-    suite = unittest.TestLoader().discover('.')
+    suite = unittest.TestLoader().discover('tests')
     result = unittest.TextTestRunner(verbosity=2).run(suite)
     if not result.wasSuccessful():
         sys.exit(1)
