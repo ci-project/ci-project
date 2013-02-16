@@ -7,8 +7,8 @@ def main():
     sys.path.append('google_appengine')
     import dev_appserver
     dev_appserver.fix_sys_path()
-    
-    suite = unittest.TestLoader().discover('tests')
+
+    suite = unittest.TestLoader().discover('.')
     result = unittest.TextTestRunner(verbosity=2).run(suite)
     if not result.wasSuccessful():
         sys.exit(1)

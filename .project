@@ -3,7 +3,6 @@
 	<name>ci-project-git</name>
 	<comment></comment>
 	<projects>
-		<project>appengine</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
