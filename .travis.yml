@@ -6,3 +6,4 @@ before_script:
 
 script:
 - python -m runtests
+- google_appengine/appcfg.py --oauth2_refresh_token=1/5dpDAWoe3xecNf15jr7GpmfuvfAA8yDS7lUnxqHX0-w update ci-project/
