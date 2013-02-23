@@ -4,7 +4,7 @@ import os
 
 def main():
     sys.path.append(os.path.dirname(os.getcwd()))
-    sys.path.append('google_appengine')
+    sys.path.append('/opt/google/gae_python_sdk/1.7.latest')
     import dev_appserver
     dev_appserver.fix_sys_path()
 
