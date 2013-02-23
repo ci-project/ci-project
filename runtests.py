@@ -1,10 +1,12 @@
 import sys
 import unittest
 import os
+from os.path import expanduser
 
 def main():
     sys.path.append(os.path.dirname(os.getcwd()))
-    sys.path.append('google_appengine')
+    home = expanduser("~")
+    sys.path.append(home+'/google_appengine')
     import dev_appserver
     dev_appserver.fix_sys_path()
 
